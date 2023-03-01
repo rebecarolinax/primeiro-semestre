@@ -1,0 +1,17 @@
+* {
+    /* reset de propriedades */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+
+body {
+background-color: aqua;
+}
+
+header {
+    background-color: #f90039;
+    height: 60px;
+}
