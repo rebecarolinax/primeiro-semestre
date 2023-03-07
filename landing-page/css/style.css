@@ -1,103 +1,241 @@
+/* imports  */
+
+
 @font-face {
-    /* apelido ou nome da fonte  */
-    font-family: "Rebeca Linda";
-    src: url(../assets/fonts/bebas_neue/BebasNeue-Regular.ttf);
+    font-family: OpenSans;
+    src: url(../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+    font-family: BebasNeue-Regular;
+    src: url(../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
 }
 
+
+/* reset de propriedades */
+
+
 * {
-    /* reset de propriedades */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* genéricas */ 
+
+
 .layout-grid {
-    /* centralização do projeto */
     width: 100%;
-    height: auto;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
 }
-
-
-/* body */
 
 body {
-    background-color: white;
+    background-color: #080324;
+    color: white;
+    font-size: 16px;
 }
 
+header #menu-mobile and footer {
+    display: block;
+}
+
+
 header {
-    /* todas as modificações do cabeçalho */
-    background-color: #f90039;
     height: 60px;
-    width: 100%;
+    background-color: #F9003D;
 }
 
 header .header-flex {
-    /* boxflex no cabeçalho */
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-}
-
-.nav-flex {
-    display: flex;
-    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
 }
 
 header nav {
-    /* box dos links do cabeçalho */
-    width: 600px;
-    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
 }
 
 header nav a {
-    /* todas as modificações dos links do cabeçalho */
-    font-family: "Rebeca Linda";
-    text-decoration: none;
+    font-family: "BebasNeue-Regular";
     color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
     letter-spacing: 2px;
-    text-transform: lowercase;
+    text-shadow: 2px 2px 20px black;
+    padding: 15px 20px;
+    border-radius: 5px;
 }
 
 header nav a:hover {
+    text-shadow: 0px 0px 5px rgba(249, 0, 61, 0.3);
     background-color: white;
-    color: #f9003d;
+    color: #F9003D;
 }
 
+header #menu-mobile {
+    display: none;
+}
+
+
+/* main */
+
+
 main .banner {
-    width: 100%;
     height: 740px;
-    color: white;
     background-image: url(../assets/images/imagem-fundo-banner\ 1.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 }
 
-main .banner #bannerinfo {
-    width: 550px;
-}
-
 main .banner-flex {
     display: flex;
     align-items: center;
     height: 100%;
+
 }
 
-main #bannerinfo h1 {
-    margin-bottom: 20px;
-    border-bottom: 2px solid #FFAF00;
-    font-family: "Rebeca Linda";
+main .banner-flex #banner-infobox {
+    width: 560px;
+}
+
+main .banner-flex h1 {
+    margin-bottom: 40px;
+    font-family: BebasNeue-Regular, sans-serif;
     font-size: 96px;
+    color: white;
 }
 
-main #bannerinfo p {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+main .banner-flex p {
+    margin-bottom: 40px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 53px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #f90039;
+    color: #F9003D;
 }
+
+
+/* sobre */
+
+
+main .sobre {
+    padding: 60px 0;
+}
+
+main .sobre h2 {
+    margin-bottom: 40px;
+    font-family: BebasNeue-Regular;
+    font-size: 64px;
+    color: #F9003D;
+}
+
+main .sobre .linha {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .sobre .linha img {
+    width: 490px;
+}
+
+main .sobre .linha .participantes {
+    width: 590px;
+
+}
+
+main .sobre .linha .participantes h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+main .sobre .linha .participantes h4 {
+    margin-bottom: 20px;
+    font-family: BebasNeue-Regular;
+    font-size: 64px;
+    color: #FFAF00;
+}
+
+main .sobre .linha .participantes p {
+    line-height: 28px;
+    font-size: 20px;
+    text-align: justify;
+    font-family: "OpenSans";
+}
+
+
+/* footer */
+
+footer {
+    border: solid green;
+}
+footer .endereco {
+    background-color: black;
+    color: white;
+}
+
+footer .endereco h1 {
+    font-family: BebasNeue-Regular, sans-serif;
+    font-size: 64px;
+    color: #FFAF00;
+}
+
+footer .endereco p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Desktop First */
+/* esconde barras */
+header #menu-mobile {
+    display: block;
+}
+
+
+/* Smartphone */
+@media screen and (max-width:767px) {
+    main {
+        display: none;
+    }
+
+
+    header nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 80vw;
+    max-width: 360px;
+    height: 100vh;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9003D;
+
+    }
+
+    header nav a {
+        width: 150px;
+        margin-bottom: 30px;
+        border-left: 2px dashed white;
+        border-radius: 0;
+    }
+
+    /* esconde o icone de barras */
+    header #menu-mobile {
+        display: block;
+    }
+
+   
+
+
+}
+    
+
