@@ -43,35 +43,20 @@
 
         <div class="header-bottom">
             <div class="layout-grid alinhamento-between-center">
+
                 <!-- menu hamburger. Visível apenas no smartphone -->
 
-                <img src="assets/icons/Vector Hamburguer.svg" class="menu-hamburger"
+                <img onclick="mostrarMenu()" src="assets/icons/Vector Hamburguer.svg" class="menu-hamburger"
                     alt="Ícone para abrir e fechar o menu de celular">
 
                 <img class="logo" src="assets/icons/logotipo-gamer.svg"
                     alt="Logotipo da empresa. Texto Gamer com um joystick ao centro">
 
-                <nav class="menu">
+                <nav class="menu" id="menu">
                     <a href="">Início</a>
                     <a href="">Jogadores</a>
                     <a href="">Equipes</a>
                     <a href="">Notícias</a>
-
-                    <!-- menu 3 pontinhos -->
-
-
-
-                    <div class="menu-usuarios">
-                        <a href="">
-                            <img src="assets/icons/Vector User.svg" alt="Ícone de perfil">
-                        </a>
-                        <a href="">
-                            <img src="assets/icons/Vector Sacolinha.svg" alt="Ícone de sacola">
-                        </a>
-                        <a href="">
-                            <img src="assets/icons/Icones Lupa.svg" alt="Ícone lupa de pesquisa">
-                        </a>
-                    </div>
 
 
                     <!-- visível apenas no mobile -->
@@ -96,16 +81,43 @@
                             <img src="assets/icons/Vector Instagram.svg"
                                 alt="Imagem link do Instagram da empresa Gamer">
                         </a>
-                    </div>
+
                 </nav>
-                
-                <img src="assets/icons/Vector 3 Pontinhos.svg" class="menu-pontinhos"
+
+                <!-- menu 3 pontinhos -->
+
+                <img onclick="mostrarUser()" src="assets/icons/Vector 3 Pontinhos.svg" class="menu-pontinhos"
                     alt="Ícone 3 pontinhos, abre o menu de usuários">
+
+                <div class="menu-usuarios" id="user">
+                    <a href="">
+                        <img src="assets/icons/Vector User.svg" alt="Ícone de perfil">
+                    </a>
+                    <a href="">
+                        <img src="assets/icons/Vector Sacolinha.svg" alt="Ícone de sacola">
+                    </a>
+                    <a href="">
+                        <img src="assets/icons/Icones Lupa.svg" alt="Ícone lupa de pesquisa">
+                    </a>
+
+                </div>
             </div>
+        </div>
 
         </div>
     </header>
 
+    <script>
+        function mostrarMenu() {
+            document.getElementById("menu").classList.toggle("mostrar-menu");
+        }
+    </script>
+
+    <script>
+        function mostrarUser() {
+            document.getElementById("user").classList.toggle("mostrar-user");
+        }
+    </script>
 </body>
 
 </html>
